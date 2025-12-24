@@ -1,0 +1,146 @@
+canvas {
+	display: block;
+}
+
+.block-audio {
+	display: none;
+}
+
+.message-container {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.85)
+  );
+
+  /* ❌ REMOVE THIS */
+  /* backdrop-filter: blur(6px); */
+}
+
+
+
+.message-container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  margin-bottom: 26px;
+  color: #ffffff;
+  text-shadow: 0 0 22px rgba(255, 255, 255, 0.6);
+}
+
+
+.message {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  line-height: 1.85;
+  max-width: 720px;
+  margin-bottom: 22px;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.35);
+}
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeUp 1.6s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 2s; }
+.delay-3 { animation-delay: 3.5s; }
+.delay-4 { animation-delay: 5s; }
+.delay-5 { animation-delay: 6.5s; }
+.delay-6 { animation-delay: 8s; }
+
+.side-images {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.side-image {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 220px;
+
+  opacity: 0.8;          /* clear but not overpowering */
+  filter: none;          /* removes blur completely */
+
+  image-rendering: auto;
+}
+
+
+/* Left image */
+.side-image.left {
+  left: 4%;
+}
+
+/* Right image */
+.side-image.right {
+  right: 4%;
+}
+
+
+@keyframes float {
+  from {
+    transform: translateY(-50%) translateY(0);
+  }
+  to {
+    transform: translateY(-50%) translateY(-18px);
+  }
+}
+
+.side-image {
+  animation: float 4s ease-in-out infinite alternate;
+}
+
+.side-image {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.side-images {
+  position: absolute;
+  inset: 0;
+  z-index: 15;   /* higher than message background */
+  pointer-events: none;
+}
+
+.side-image {
+  position: absolute;
+   position: absolute;
+  bottom: 6%; 
+  width: 120px;
+
+  opacity: 1;        /* FULL visibility */
+  filter: none;      /* no blur */
+}
+
+.side-image.left {
+  left: 4%;
+}
+
+.side-image.right {
+  right: 4%;
+}
